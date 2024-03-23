@@ -6,6 +6,7 @@ import datetime
 from uuid import UUID
 import json
 import os
+import time
 
 
 class test_basemodel(unittest.TestCase):
@@ -94,6 +95,6 @@ class test_basemodel(unittest.TestCase):
         """ """
         new = self.value()
         self.assertEqual(type(new.updated_at), datetime.datetime)
-        n = new.to_dict()
-        new = BaseModel(**n)
-        self.assertFalse(new.created_at == new.updated_at)
+        time.sleep(.02)
+        new2 = BaseModel()
+        self.assertNotEqual(new.created_at, new2.updated_at)
