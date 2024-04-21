@@ -66,3 +66,7 @@ class FileStorage:
         if not obj:
             return
         del self.__objects[f"{obj.__class__.__name__}.{obj.id}"]
+
+    def close(self):
+        """Close session."""
+        self.reload()
