@@ -6,6 +6,7 @@ from models.base_model import Base
 import models
 import os
 
+
 class DBStorage:
     """New SQL eng."""
     __engine = None
@@ -28,7 +29,8 @@ class DBStorage:
         """Get a dict of all obj."""
         d = {}
         if not cls:
-            lists = [models.State, models.City, models.User, models.Place, models.Review, models.Amenity]
+            lists = [models.State, models.City, models.User,
+                     models.Place, models.Review, models.Amenity]
             for classes in lists:
                 q = self.__session.query(classes)
                 for ele in q:

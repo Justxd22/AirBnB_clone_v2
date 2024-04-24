@@ -6,6 +6,7 @@ from sqlalchemy import Column, Integer, String, ForeignKey
 import models
 import shlex
 
+
 class State(BaseModel, Base):
     """State class."""
     __tablename__ = "states"
